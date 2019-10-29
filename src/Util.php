@@ -32,8 +32,9 @@ class Util
     {
         if (is_null($date)) {
             $dateTimestamp = time();
+        } else {
+            $dateTimestamp = strtotime($date);
         }
-        $dateTimestamp = strtotime($date);
 
         switch ( ConfigMapper::get('resource_subdir_rule') ) {
             case "year":
